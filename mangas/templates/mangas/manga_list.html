@@ -1,0 +1,56 @@
+{% extends 'mangas/revisar.html'%}
+{% block content %}
+{% load static %}
+    <h1 class="my-4">
+        <small>Lista de mangas</small> <a href="{%url 'manga_form' %}"><button type="button" class="btn btn-outline-primary btn-sm"><i class="fas fa-plus-square" style="color:#00FF80"></i></button></a></td>
+    </h1>
+    {% if not object_list %}
+
+            <div class="alert alert-danger" role="alert">
+               <p> ¡No hay mangas para mostrar! ¿Quieres agregar uno? <a href="{%url 'manga_form' %}">Agrega aquí</a></p>
+            </div>
+
+    {% endif %}
+
+
+    <div class="row">
+    {% if object_list %}
+        <div class="col-12" style="overflow-x: scroll">
+            <table class="table">
+              <thead class="thead" style="color:royalblue;">
+                <tr>
+                    <th scope="col">Nombre del manga</th>
+                    <th scope="col">Autor del manga</th>
+                    <th scope="col">Estatus del manga</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Generos</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Portada</th>
+                    <th scope="col">Detalles</th>
+                    <th scope="col">Eliminar</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                {% for manga in object_list %}
+                <tr>
+                    <td><a href="{% url 'manga_detalle' manga.id %}">{{ manga.nombreM }}</td>
+                    <td>{{ manga.autorM }}</td>
+                    <td>{{ manga.manga_sta }}</td>
+                    <td>{{ manga.descriptionM }}</td>
+                    <td>{{ manga.generoM }}</td>
+                    <td>{{ manga.rateM }}</td>
+                    <td> <img class="" src="/staticfiles/mediafiles/{{  manga.imageM }}" style="width:100px;height:110px"></td>
+
+                    <td><a href="{% url 'manga_detalle' manga.id %}"><button type="button" class="btn btn-outline-primary btn-sm"><i class="fas fa-eye" ></i></button></a></td>
+                    <td><a href="{% url 'manga_delete' manga.id %}"><button type="button" class="btn btn-outli>ne-danger btn-sm"><i class="fas fa-dumpster-fire" style="color:red;"></i></button></a></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+    {% endif%}
+
+
+    </div>
+{% endblock %}

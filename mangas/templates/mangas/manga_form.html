@@ -1,0 +1,85 @@
+{% extends 'mangas/revisar.html' %}
+
+{% load static %}
+
+{% block content%}
+
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-6 d-none d-lg-block">
+                  <img src="/staticfiles/mediafiles/berserk.jpg" style="height:100%; width:105%">
+              </div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Welcome to the Manga List Creator!</h1>
+                  </div>
+                  <form role="form" method="post" action="" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                        <div class="card-body">
+                            {{form.as_p}}
+                        </div>
+
+
+
+                    <div>
+                     <input type="submit" value="¡Agregar Manga!" class="btn btn-fill btn-outline-primary">
+                          <a href="{% url 'manga_list' %}"><button type="button" class="btn btn-primary">Volver</button></a>
+                    </div>
+                    </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+-->
+
+
+
+<!--
+<h1 class="my-4"> ¡Nuevo Manga!  </h1>
+
+
+<div class="row">
+    <div class="col-12">
+        <form method="post" enctype="multipart/form-data" action="">
+            {% csrf_token %}
+
+
+
+            {{form.as_p}}
+
+        <div>
+        <input type="submit" value="¡Agregar Manga!" class="btn btn-fill btn-outline-danger">
+            <a href="{% url 'manga_list' %}"><button type="button" class="btn btn-secondary">Volver</button></a>
+        </div>
+
+
+        </form>
+
+
+
+
+
+    </div>
+</div>-->
+
+{% endblock %}
