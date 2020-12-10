@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'rest_framework.authtoken',
-    'socialauth',
-    'googleauth',
     'personas',
     'mangas',
     'bootstrap4',
@@ -157,6 +155,8 @@ STATICFILES_DIRS = [
 LOGIN_URL = '/personas/login'
 
 LOGIN_REDIRECT_URL='/personas/bienvenida'
+
+ACCOUNT_LOGOUT_REDIRECT_URL ='/'
 
 AUTH_USER_MODEL = 'personas.LocalUser'
 

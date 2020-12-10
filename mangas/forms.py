@@ -38,9 +38,10 @@ class MangaForms(forms.ModelForm):
             'class': 'form-control col-md'
         }
 
-
-
+        self.fields['portadaManga'].widget.attrs = {
+            'class': 'form-control col-md'
+        }
 
     class Meta:
         model= Manga
-        fields=('nombreM' , 'autorM', 'descriptionM', 'generoM', 'manga_sta', 'rateM',  'volumen','capitulos')
+        fields=('nombreM' , 'autorM', 'descriptionM', 'generoM', 'manga_sta', 'rateM',  'volumen','capitulos', 'portadaManga')

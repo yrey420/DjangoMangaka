@@ -21,6 +21,7 @@ class Manga(models.Model):
     rateM = models.FloatField('Rate', validators=[MinValueValidator(0.0), MaxValueValidator(5)])
     volumen = models.IntegerField('Volumenes', null=True)
     capitulos = models.IntegerField('Capitulos', null=True)
+    portadaManga= models.ImageField('Imagen de portada', upload_to="", blank=True, null=False, default="/berserk.jpg" )
 
 
     objects= models.Manager()

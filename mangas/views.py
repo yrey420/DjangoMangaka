@@ -41,7 +41,7 @@ class MangaCreate(SuccessMessageMixin, CreateView):
         if request.method == "POST":
             form = self.form_class(request.POST, request.FILES)
             if form.is_valid():
-                form.imageM = form.cleaned_data['imageM']
+                form.imageM = form.cleaned_data['portadaManga']
                 form.save()
                 return self.form_valid(form)
             else:

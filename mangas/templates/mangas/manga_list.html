@@ -40,7 +40,7 @@
                     <td>{{ manga.descriptionM }}</td>
                     <td>{{ manga.generoM }}</td>
                     <td>{{ manga.rateM }}</td>
-                    <td> <img class="" src="/staticfiles/mediafiles/{{  manga.imageM }}" style="width:100px;height:110px"></td>
+                    <td> <img class="" src="/staticfiles/mediafiles/{{  manga.portadaManga }}" style="width:100px;height:110px"></td>
 
                     <td><a href="{% url 'manga_detalle' manga.id %}"><button type="button" class="btn btn-outline-primary btn-sm"><i class="fas fa-eye" ></i></button></a></td>
                     <td><a href="{% url 'manga_delete' manga.id %}"><button type="button" class="btn btn-outli>ne-danger btn-sm"><i class="fas fa-dumpster-fire" style="color:red;"></i></button></a></td>

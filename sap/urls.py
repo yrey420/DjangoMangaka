@@ -29,8 +29,6 @@ from rest_framework.authtoken import views
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('socialauth/', include(('socialauth.urls', 'socialauth'),
-                                 namespace="socialauth")),
     path('api/', include('api.urls', namespace='api')),
     path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),
     path('accounts/', include('allauth.urls')),
